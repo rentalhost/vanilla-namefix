@@ -1,0 +1,35 @@
+{
+    "name": "rentalhost/vanilla-namefixer",
+    "description": "Use to correct the case of the users name.",
+    "type": "library",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "David Rodrigues",
+            "email": "david.rodrigues@rentalhost.net"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Rentalhost\\Vanilla\\Namefixer\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Rentalhost\\Vanilla\\Namefixer\\Tests\\": "tests/"
+        }
+    },
+
+    "require": {
+        "php": ">=7.3",
+        "ext-mbstring": "*",
+        "symfony/polyfill-php74": "^1.18"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "^9.2"
+    }
+}
