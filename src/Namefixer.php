@@ -12,12 +12,12 @@ class Namefixer
             return $name;
         }
 
-        $normalizedNames          = preg_split('/[\s\xA0]+/u', preg_replace('/\.+/u', '. ', preg_replace('/^[\s\xA0]+|[\s\xA0]+$/u', null, $name)));
+        $normalizedNames          = preg_split('/[\s\xA0]+/u', preg_replace('/\.+/u', '. ', preg_replace('/^[\s\xA0]+|[\s\xA0]+$/u', '', $name)));
         $normalizedNamesLastIndex = count($normalizedNames) - 1;
 
         $processedName = rtrim(implode(' ', array_map(static function (string $nameOriginal, int $nameIndex) use ($normalizedNamesLastIndex) {
             $nameLower            = mb_strtolower($nameOriginal);
-            $nameLowerClean       = preg_replace('/\.+$/', null, $nameLower);
+            $nameLowerClean       = preg_replace('/\.+$/', '', $nameLower);
             $nameLowerCleanLength = mb_strlen($nameLowerClean);
 
             if ($nameLowerCleanLength === 1) {
